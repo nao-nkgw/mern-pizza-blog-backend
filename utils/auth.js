@@ -8,7 +8,7 @@ const auth = async (req, res, next) => {
   }
 
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQG5hb25rZ3cuY29tIiwiaWF0IjoxNzAwMDM3NzYxLCJleHAiOjE3MDAxMjA1NjF9.0vxM5FCqUAasZUShJEHoQdsxiUgdjhCOlJHk6PA_nkE";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQHJlbmVoaS5jb20iLCJpYXQiOjE3MDAwNTM0NzAsImV4cCI6MTcwMDEzNjI3MH0.Ntq_lbMytFv4LPbSvRReS8lzLUWaAI2dxviS-6ijo4I";
 
   //   await req.headers.authorization.split(" ")[1];
 
