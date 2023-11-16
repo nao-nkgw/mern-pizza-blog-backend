@@ -3,17 +3,35 @@ const jwt = require("jsonwebtoken");
 const secret_key = "pizza-blog";
 
 const auth = async (req, res, next) => {
-  if (req.method === "GET") {
-    return next();
+
+
+
+//...
+
+  if(req.method === "GET"){
+    return handler(req, res, next)
+}
+
+const token = await req.headers.authorization.split(" ")[1]
+
+if(!token){
+    return res.status(401).json({message: "noToken"})
+}
+
+//...
+
+  /*   if (req.method === "GET") {
+    return handler(req,res);
   }
 
-  const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQHJlbmVoaS5jb20iLCJpYXQiOjE3MDAwNTM0NzAsImV4cCI6MTcwMDEzNjI3MH0.Ntq_lbMytFv4LPbSvRReS8lzLUWaAI2dxviS-6ijo4I";
+  const token =await req.headers.authorization.split(" ")[1] */
 
-  //   await req.headers.authorization.split(" ")[1];
+/*   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQHJlbmVoaS5jb20iLCJpYXQiOjE3MDAwNTM0NzAsImV4cCI6MTcwMDEzNjI3MH0.Ntq_lbMytFv4LPbSvRReS8lzLUWaAI2dxviS-6ijo4I"; */
+
+ 
 
   if (!token) {
-    return res.status(400).json({ message: "there's no token" });
+    return res.status(401).json({ message: "there's no token" });
   }
   try {
     const decoded = jwt.verify(token, secret_key);
