@@ -7,7 +7,7 @@ const ItemSchema = new Schema({
   title: String,
   image: String,
   star: String,
-  rate: String,
+/*   rate: String, */
   description: String,
   email: String,
 });
